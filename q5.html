@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2%;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-container {
+      display: flex;
+      gap: 2%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .plan {
+      background-color: #fff;
+      flex: 1 1 30%;
+      padding: 2rem;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .plan:hover {
+      transform: scale(1.05);
+      background-color: #e0f7fa;
+    }
+
+    .plan h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .plan ul li {
+      margin: 0.8rem 0;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+
+    .plan a {
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      background-color: #2c3e50;
+      color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .plan a:hover {
+      background-color: #34495e;
+    }
+
+    .popular {
+      border: 3px solid #ff9800;
+      background-color: #fff3e0;
+    }
+
+    @media (max-width: 800px) {
+      .plan {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Our Pricing Plans</h1>
+  <div class="pricing-container">
+    <div class="plan">
+      <h2>Basic</h2>
+      <ul>
+        <li>Feature 1</li>
+        <li>Feature 2</li>
+        <li>Feature 3</li>
+      </ul>
+      <div class="price">$10/month</div>
+      <a href="#">Choose Plan</a>
+    </div>
+
+    <div class="plan popular">
+      <h2>Standard</h2>
+      <ul>
+        <li>Feature 1</li>
+        <li>Feature 2</li>
+        <li>Feature 3</li>
+        <li>Feature 4</li>
+      </ul>
+      <div class="price">$20/month</div>
+      <a href="#">Choose Plan</a>
+    </div>
+
+    <div class="plan">
+      <h2>Premium</h2>
+      <ul>
+        <li>Feature 1</li>
+        <li>Feature 2</li>
+        <li>Feature 3</li>
+        <li>Feature 4</li>
+        <li>Feature 5</li>
+      </ul>
+      <div class="price">$30/month</div>
+      <a href="#">Choose Plan</a>
+    </div>
+  </div>
+</body>
+</html>
