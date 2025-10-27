@@ -1,0 +1,17 @@
+/* Task 10: Combined layout */
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px;background:#0b1220;color:#fff}
+.nav a{margin-left:12px;color:#cbd5e1;text-decoration:none}
+.main-grid{display:grid;grid-template-columns:2fr 1fr;gap:16px;padding:16px}
+.article{background:#fff;padding:16px;border-radius:8px}
+.sidebar{background:#fff;padding:16px;border-radius:8px}
+.flex-row{display:flex;gap:12px;margin-top:12px}
+.box{flex:1;padding:12px;background:#f1f5f9;border-radius:6px;text-align:center}
+
+/* Keyframe: title fades in and moves up */
+.animated-title{opacity:0;transform:translateY(12px);animation:fadeUp 0.7s forwards 0.2s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* Collapse to single column on small screens */
+@media (max-width:800px){.main-grid{grid-template-columns:1fr}.flex-row{flex-direction:column}}
+footer.foot{text-align:center;padding:12px;background:#0b1220;color:#fff;margin-top:16px}
