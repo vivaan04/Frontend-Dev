@@ -1,0 +1,15 @@
+/* Task 6: Blog using CSS Grid template-areas */
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+.site{display:grid;grid-template-rows:auto 1fr auto;min-height:100vh;gap:16px}
+.header{padding:16px;background:#0b1220;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.content{display:grid;grid-template-columns:300px 1fr;gap:16px;padding:16px;grid-template-areas:"sidebar posts"}
+.sidebar{grid-area:sidebar;background:#fff;padding:12px;border-radius:8px}
+.posts{grid-area:posts;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.post{background:#fff;padding:12px;border-radius:8px}
+.footer{padding:12px;text-align:center;background:#0b1220;color:#fff}
+
+/* Below 800px move sidebar below posts */
+@media (max-width:800px){
+  .content{grid-template-columns:1fr;grid-template-areas:"posts" "sidebar"}
+  .posts{grid-template-columns:1fr}
+}
