@@ -1,0 +1,7 @@
+body{font-family:Inter,Arial,sans-serif;background:#fff;padding:20px;color:#0f172a}
+header h1{text-align:center;color:#0b61ff;margin-bottom:12px}
+.combo{display:flex;gap:18px;justify-content:center;align-items:center;padding:30px;flex-wrap:wrap}
+.e{padding:12px 18px;border-radius:8px;border:none;background:#e6f0ff;color:#0b61ff;cursor:pointer;transition:all .3s;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.e:hover{transform:scale(1.08);background:#0b61ff;color:#fff;box-shadow:0 18px 40px rgba(2,6,23,0.12)}
+.e:active{transform:scale(0.98)}
+@media(max-width:700px){.combo{flex-direction:column}}

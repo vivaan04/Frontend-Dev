@@ -1,0 +1,9 @@
+body{font-family:Inter,Arial,sans-serif;background:#fff;padding:20px;color:#0f172a}
+header h1{text-align:center;color:#0b61ff;margin-bottom:12px}
+.anim-wrap{display:flex;gap:24px;justify-content:center;align-items:center;padding:40px;flex-wrap:wrap}
+.moving{width:120px;height:40px;background:#cfe0ff;border-radius:8px;animation:slide 3s linear infinite alternate;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.ball{width:80px;height:80px;background:#0b61ff;border-radius:50%;animation:bounce 1.2s ease-in-out infinite;box-shadow:0 8px 20px rgba(2,6,23,0.08)}
+.text-anim{animation:colorShift 2s ease-in-out infinite alternate;font-weight:600}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(160px)}}
+@keyframes bounce{from{transform:translateY(0)}to{transform:translateY(-80px)}}
+@keyframes colorShift{from{color:#0b61ff}to{color:#00a3ff}}

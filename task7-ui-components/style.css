@@ -1,0 +1,6 @@
+body{font-family:Inter,Arial,sans-serif;background:#fff;padding:20px;color:#0f172a}
+header h1{text-align:center;color:#0b61ff;margin-bottom:12px}
+.ui-card{max-width:480px;margin:20px auto;background:linear-gradient(180deg,#ffffff,#f8fbff);padding:18px;border-radius:12px;display:flex;gap:12px;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+input,select{padding:10px;border-radius:8px;border:1px solid #e6eefc}
+button{padding:10px 14px;border-radius:8px;border:none;background:#0b61ff;color:#fff;cursor:pointer}
+input:focus,select:focus,button:focus{outline:3px solid rgba(11,97,255,0.1);outline-offset:3px}

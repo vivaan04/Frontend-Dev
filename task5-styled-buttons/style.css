@@ -1,0 +1,10 @@
+body{font-family:Inter,Arial,sans-serif;background:#fff;padding:20px;color:#0f172a}
+header h1{text-align:center;color:#0b61ff;margin-bottom:12px}
+.buttons{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;padding:20px}
+button{padding:10px 16px;border-radius:8px;border:1px solid transparent;cursor:pointer;transition:all .25s;background:#eef6ff;color:#0b61ff;box-shadow:0 4px 10px rgba(11,97,255,0.06)}
+button.primary{background:#0b61ff;color:#fff;border-color:#0b61ff}
+button.secondary{background:#e6f0ff;color:#0b61ff;border-color:#cfe0ff}
+button.outline{background:transparent;color:#0b61ff;border:2px solid #0b61ff}
+button:focus{outline:3px solid rgba(11,97,255,0.12);outline-offset:3px}
+button:active{transform:translateY(2px)}
+button:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}

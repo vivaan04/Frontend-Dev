@@ -1,0 +1,7 @@
+body{font-family:Inter,Arial,sans-serif;background:#fff;padding:20px;color:#0f172a}
+header h1{text-align:center;color:#0b61ff;margin-bottom:18px}
+.center{display:flex;gap:30px;justify-content:center;align-items:center;padding:40px}
+.tooltip-item{position:relative;font-size:40px;cursor:default}
+.tooltip-item .tt{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:#0b1220;color:#fff;padding:8px 10px;border-radius:6px;white-space:nowrap;opacity:0;visibility:hidden;transition:opacity .3s ease-in-out,transform .3s ease-in-out;transform-origin:center bottom}
+.tooltip-item:hover .tt{opacity:1;visibility:visible;transform:translateX(-50%) translateY(-6px)}
+@media(max-width:480px){.center{flex-direction:column}}

@@ -1,0 +1,18 @@
+/* element selector */
+p{line-height:1.5;margin-bottom:12px}
+/* ID selector */
+#intro{color:#0b61ff;font-weight:600}
+/* class selector */
+.note{background:#f1f9ff;padding:8px;border-radius:6px}
+/* attribute selector: links starting with https */
+a[href^="https"]{color:#0b61ff;text-decoration:underline}
+/* descendant selector */
+.wrap ul{padding-left:18px}
+/* child combinator */
+.wrap > h2{margin-bottom:6px}
+/* adjacent sibling */
+p + a{display:inline-block;margin-top:6px}
+body{font-family:Inter,Arial,sans-serif;background:#fff;padding:20px;color:#0f172a}
+header h1{text-align:center;color:#0b61ff;margin-bottom:12px}
+.content{max-width:800px;margin:0 auto}
+footer.foot{text-align:center;margin-top:20px;color:#475569}
