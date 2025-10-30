@@ -1,0 +1,24 @@
+/* Task5: Advanced selectors - Light theme */
+/* Attribute selector: selects input elements with type="text" */
+input[type="text"]{border:2px solid #cfe0ff;padding:8px;border-radius:6px}
+
+/* Attribute selector starts-with: links starting with https */
+a[href^="https"]{color:#0b61ff;text-decoration:underline}
+
+/* Pseudo-classes */
+a:hover{opacity:0.8}
+input:focus{outline:3px solid rgba(11,97,255,0.15);background:#fff}
+.items li:nth-child(odd){background:#f8fafc;padding:8px;border-radius:4px;margin-bottom:6px}
+
+/* Pseudo-elements */
+.items li::before{content:"• ";color:#0b61ff;font-weight:700}
+
+/* Combinators */
+/* Child combinator: direct children of .links */
+.links > a{margin-right:12px;display:inline-block}
+/* Adjacent sibling: style element immediately after another */
+.links a + a{border-left:1px solid #eef2ff;padding-left:10px}
+/* General sibling (~) not used visually here but available */
+
+/* Comments explain selector types - see above */
+body{font-family:Inter,Arial,sans-serif;padding:20px;color:#0f172a}

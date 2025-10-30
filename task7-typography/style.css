@@ -1,0 +1,9 @@
+/* Task7: Typography - Light theme */
+body{font-family:Georgia,serif;background:#fff;color:#0f172a;padding:20px}
+.site-header{padding:12px;border-bottom:1px solid #eef2ff;color:#0b61ff}
+.article{max-width:800px;margin:24px auto;line-height:1.65;font-size:18px;letter-spacing:0.2px}
+mark{background:#fffbcc;color:#0b61ff;padding:0 4px;border-radius:4px}
+strong{font-weight:700;color:#0b61ff}
+em{font-style:italic;color:#475569}
+.article::first-line{font-variant:small-caps;letter-spacing:1px}
+.article::first-letter{font-size:2.2em;float:left;margin-right:8px;color:#0b61ff}

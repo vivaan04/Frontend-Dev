@@ -1,0 +1,12 @@
+/* Task10: Navbar - Light theme */
+:root{--accent:#0b61ff}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial,sans-serif}
+body{min-height:100vh;background:#fff;color:#0f172a;display:flex;flex-direction:column}
+.navwrap{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-bottom:1px solid #eef2ff}
+.brand{font-weight:700;color:var(--accent)}
+.nav{display:flex;gap:10px}
+.nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:#0f172a;transition:all .3s ease;border:1px solid transparent}
+.nav a:hover{background:#eef6ff;border-color:#dbeafe;transform:translateY(-3px)}
+.nav a.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+@media(max-width:700px){.navwrap{flex-direction:column;align-items:flex-start}.nav{flex-direction:column;width:100%}.nav a{width:100%}}
+.foot{text-align:center;padding:12px;margin-top:auto;border-top:1px solid #eef2ff}
