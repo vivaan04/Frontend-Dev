@@ -1,0 +1,12 @@
+/* Task3: Gradient backgrounds - Light theme */
+:root{--accent:#0b61ff;--muted:#334155}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial,sans-serif}
+body{min-height:100vh;display:flex;flex-direction:column;color:#0f172a}
+.site-header{padding:14px;background:rgba(255,255,255,0.8);border-bottom:1px solid #eef2ff}
+.linear{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;
+  background:linear-gradient(135deg,#e6f0ff 0%, #ffffff 60%);}
+.radial{min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;
+  background:radial-gradient(circle at 20% 20%, #fff7ed, #fef3c7 30%, #ffffff 60%);
+  background-attachment:fixed;}
+.linear h2,.radial h2{color:var(--accent);margin-bottom:8px}
+.foot{padding:12px;text-align:center;border-top:1px solid #eef2ff}

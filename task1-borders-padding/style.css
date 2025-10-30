@@ -1,0 +1,20 @@
+/* Task1: Borders & Padding - Light theme */
+:root{--bg:#ffffff;--accent:#0b61ff;--muted:#64748b;--card:#f8fafc}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,Arial,sans-serif}
+body{background:var(--bg);color:#0f172a;min-height:100vh;display:flex;flex-direction:column}
+.site-header{padding:18px 24px;border-bottom:1px solid #e6eefc}
+.site-header h1{color:var(--accent)}
+.demo{display:flex;gap:18px;padding:28px;justify-content:center;align-items:center;flex-wrap:wrap}
+.box{background:var(--card);padding:16px;border-radius:10px;min-width:160px;transition:border-color .3s;display:flex;align-items:center;justify-content:center;text-align:center}
+.box p{color:var(--muted)}
+.solid{border:3px solid #0b61ff;border-radius:4px}
+.dashed{border:3px dashed #0b61ff;border-radius:12px}
+.double{border:6px double #0b61ff;border-radius:6px}
+.groove{border:4px groove #0b61ff;border-radius:20px}
+.box:hover{border-color:#ff6b6b}
+
+/* Rounded corner examples (additional) */
+.box.rounded{border-radius:40px}
+
+/* Responsive: center vertical stack on small screens */
+@media(max-width:700px){.demo{flex-direction:column}}
