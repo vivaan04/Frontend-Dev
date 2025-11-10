@@ -1,0 +1,11 @@
+body{font-family:system-ui;margin:1rem}
+h1{text-align:center}
+.cheats{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+.box{padding:1rem;border-radius:8px;border:1px solid #e5e7eb;transition:transform .2s ease,background .2s ease}
+.box:hover{transform:translateY(-6px);background:#f8fafc}
+@media (max-width:700px){
+  .cheats{display:block}
+  .box{display:flex;flex-direction:row;gap:1rem;padding:.75rem}
+  .box h2{min-width:140px;margin:0}
+  .box p{margin:0}
+}

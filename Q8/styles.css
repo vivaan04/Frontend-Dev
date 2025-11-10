@@ -1,0 +1,9 @@
+body{font-family:system-ui;margin:1rem}
+.compare{display:flex;gap:1rem;align-items:flex-start}
+figure{flex:1;text-align:center}
+figure img{width:100%;height:auto;display:block;transition:filter .5s ease}
+.after img{filter:contrast(1.5) brightness(.8)}
+.after:hover img{filter:none}
+@media (max-width:700px){
+  .compare{flex-direction:column}
+}

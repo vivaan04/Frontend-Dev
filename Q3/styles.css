@@ -1,0 +1,10 @@
+body{font-family:system-ui;margin:1rem}
+.cards{display:flex;gap:1rem;flex-wrap:wrap}
+.card{flex:1 1 calc(25% - 1rem);min-width:180px;padding:1rem;background:#fff;border:1px solid #e5e7eb;border-radius:8px;transition:background .2s ease, transform .2s ease}
+.card:hover{background:#e0f2fe;transform:translateY(-6px)}
+@media (max-width:900px){
+  .card{flex:1 1 calc(50% - 1rem)}
+}
+@media (max-width:600px){
+  .card{flex:1 1 100%}
+}
