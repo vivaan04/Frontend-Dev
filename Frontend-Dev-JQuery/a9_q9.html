@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 9 - Q9 Multi-jQuery</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>body{font-family:Segoe UI,Arial;margin:16px}.carousel{width:300px;height:120px;border:1px solid #ccc;overflow:hidden} .slide{display:none;padding:20px}</style>
+</head>
+<body>
+<header><h1>Multi jQuery Widgets</h1></header>
+<main>
+  <div class="carousel">
+    <div class="slide">Slide A</div>
+    <div class="slide">Slide B</div>
+    <div class="slide">Slide C</div>
+    <div class="slide">Slide D</div>
+    <div class="slide">Slide E</div>
+  </div>
+
+  <button id="open-modal">Open Modal (v2)</button>
+  <div id="modal" style="display:none;position:fixed;left:20%;top:30%;background:#fff;padding:20px;border:1px solid #333">This is a modal. <button id="close">Close</button></div>
+
+  <div class="widgets">
+    <div class="widget">Widget 1</div>
+    <div class="widget">Widget 2</div>
+    <div class="widget">Widget 3</div>
+    <div class="widget">Widget 4</div>
+    <div class="widget">Widget 5</div>
+  </div>
+</main>
+<footer><small>Assignment 9 Q9</small></footer>
+
+<!-- jQuery v1 for carousel -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+  // Assign the older jQuery to jQuery1 and restore global $/jQuery
+  var jQuery1 = jQuery.noConflict(true);
+</script>
+
+<!-- jQuery v3 for modal + tooltips -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  var jQuery3 = jQuery.noConflict(true);
+  // Reassign both to globals in a controlled way if desired
+  window.jQuery1 = jQuery1;
+  window.jQuery3 = jQuery3;
+</script>
+
+<script src="a9_q9.js"></script>
+</body>
+</html>

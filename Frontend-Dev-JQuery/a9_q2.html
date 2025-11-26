@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 9 - Q2 Product Highlight</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body{font-family:Segoe UI,Arial;margin:16px}
+    .product{padding:10px;border:1px solid #ddd;margin:6px;position:relative}
+    .highlight{background:lightyellow}
+    .fav{position:absolute;right:8px;top:8px;cursor:pointer}
+    .details{display:none;color:#666}
+    .discount{border-color:#e67e22}
+  </style>
+</head>
+<body>
+<header><h1>Products</h1></header>
+<main>
+  <ul id="products">
+    <li class="product" data-stock="true" data-discount="true">Product A <span class="fav">☆</span>
+      <div class="details">Extra details A</div>
+    </li>
+    <li class="product" data-stock="false" data-discount="false">Product B <span class="fav">☆</span>
+      <div class="details">Extra details B</div>
+    </li>
+    <li class="product" data-stock="true" data-discount="false">Product C <span class="fav">☆</span>
+      <div class="details">Extra details C</div>
+    </li>
+    <li class="product" data-stock="true" data-discount="true">Product D <span class="fav">☆</span>
+      <div class="details">Extra details D</div>
+    </li>
+    <li class="product" data-stock="true" data-discount="false">Product E <span class="fav">☆</span>
+      <div class="details">Extra details E</div>
+    </li>
+  </ul>
+</main>
+<footer><small>Assignment 9 Q2</small></footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="a9_q2.js"></script>
+</body>
+</html>

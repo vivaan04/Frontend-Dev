@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 9 - Q6 Subscriptions</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>body{font-family:Segoe UI,Arial;margin:16px}.topic{padding:8px;border:1px solid #ccc;margin:6px}</style>
+</head>
+<body>
+<header><h1>Subscription Panel</h1></header>
+<main>
+  <div id="panel">
+    <div class="topic" data-name="news">News <button class="subscribe">Subscribe</button> <button class="unsubscribe">Unsubscribe</button></div>
+    <div class="topic" data-name="offers">Offers <button class="subscribe">Subscribe</button> <button class="unsubscribe">Unsubscribe</button></div>
+    <div class="topic" data-name="updates">Updates <button class="subscribe">Subscribe</button> <button class="unsubscribe">Unsubscribe</button></div>
+    <div id="dynamic"></div>
+    <form id="add-topic"><input id="topic-name" placeholder="New topic"><button type="submit">Add Topic</button></form>
+    <div id="messages"></div>
+  </div>
+</main>
+<footer><small>Assignment 9 Q6</small></footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="a9_q6.js"></script>
+</body>
+</html>
