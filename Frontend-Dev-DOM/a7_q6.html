@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q6 - Table Filter</title>
+<style>
+  body{font-family:Arial;margin:20px}
+  table{border-collapse:collapse;width:100%}
+  th,td{border:1px solid #ddd;padding:8px}
+  tr.hidden{display:none}
+  #nores{display:none;color:#c0392b;margin-top:8px}
+</style>
+</head>
+<body>
+  <h2>Student Table Filter</h2>
+  <input id="search" placeholder="Search by name or branch">
+  <div id="nores">No results found</div>
+  <table id="tbl">
+    <thead><tr><th>Name</th><th>Branch</th><th>CGPA</th></tr></thead>
+    <tbody>
+      <tr><td>Alice</td><td>CSE</td><td>9.1</td></tr>
+      <tr><td>Bob</td><td>ECE</td><td>8.4</td></tr>
+      <tr><td>Carla</td><td>ME</td><td>7.9</td></tr>
+      <tr><td>David</td><td>CSE</td><td>8.7</td></tr>
+    </tbody>
+  </table>
+<script>
+const search = document.getElementById('search')
+const rows = Array.from(document.querySelectorAll('#tbl tbody tr'))
+const nores = document.getElementById('nores')
+
+search.addEventListener('input', ()=>{
+  const q = search.value.trim().toLowerCase()
+  let found = false
+  rows.forEach(r=>{
+    const text = r.textContent.toLowerCase()
+    const match = text.includes(q)
+    r.classList.toggle('hidden', !match)
+    if(match) found = true
+  })
+  nores.style.display = found ? 'none' : 'block'
+})
+</script>
+</body>
+</html>

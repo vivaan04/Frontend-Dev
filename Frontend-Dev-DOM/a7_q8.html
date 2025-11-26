@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q8 - Custom Dropdown</title>
+<style>
+  body{font-family:Arial;margin:20px}
+  .dropdown{position:relative;display:inline-block}
+  .btn{padding:8px;border:1px solid #888;cursor:pointer}
+  .options{position:absolute;top:100%;left:0;border:1px solid #ccc;background:#fff;display:none}
+  .options.open{display:block}
+  .option{padding:8px;cursor:pointer}
+  .option:hover{background:#f0f0f0}
+</style>
+</head>
+<body>
+  <h2>Custom Dropdown</h2>
+  <div class="dropdown" id="dd">
+    <div class="btn" id="ddBtn">Select option</div>
+    <div class="options" id="options">
+      <div class="option">Option 1</div>
+      <div class="option">Option 2</div>
+      <div class="option">Option 3</div>
+    </div>
+  </div>
+<script>
+const dd = document.getElementById('dd')
+const btn = document.getElementById('ddBtn')
+const opts = document.getElementById('options')
+
+btn.addEventListener('click', ()=> opts.classList.toggle('open'))
+
+// clicking an option updates button
+opts.addEventListener('click', (e)=>{
+  if(e.target.classList.contains('option')){
+    btn.textContent = e.target.textContent
+    opts.classList.remove('open')
+  }
+})
+
+// use capturing on document to close when clicking outside
+document.addEventListener('click', (e)=>{
+  if(!dd.contains(e.target)) opts.classList.remove('open')
+}, true) // capturing = true
+</script>
+</body>
+</html>

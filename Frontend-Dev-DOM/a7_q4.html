@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q4 - Theme Switcher</title>
+<style>
+  body{font-family:Arial;margin:20px;transition:background 0.2s;color:#111}
+  [data-theme='light']{background:#fff;color:#000}
+  [data-theme='dark']{background:#222;color:#eee}
+  [data-theme='blue']{background:#e6f0ff;color:#03396c}
+  button{margin-right:8px;padding:6px}
+</style>
+</head>
+<body data-theme="light">
+  <h2>Theme Switcher (Light / Dark / Blue)</h2>
+  <button data-theme-btn="light">Light</button>
+  <button data-theme-btn="dark">Dark</button>
+  <button data-theme-btn="blue">Blue</button>
+
+<script>
+const buttons = document.querySelectorAll('[data-theme-btn]')
+buttons.forEach(b=>{
+  b.addEventListener('click', ()=>{
+    const t = b.getAttribute('data-theme-btn')
+    // apply using setAttribute
+    document.body.setAttribute('data-theme', t)
+  })
+})
+</script>
+</body>
+</html>

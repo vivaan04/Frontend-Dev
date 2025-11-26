@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q2 - Live Character Counter</title>
+<style>
+  body{font-family:Arial;margin:20px}
+  textarea{width:100%;height:120px;padding:8px}
+  .counter{margin-top:8px;font-weight:bold}
+  .yellow{color:#b58900}
+  .red{color:#c0392b}
+</style>
+</head>
+<body>
+  <h2>Live Character Counter (max 100)</h2>
+  <textarea id="ta" maxlength="100"></textarea>
+  <div class="counter" id="counter">100 characters left</div>
+  <button id="reset">Reset</button>
+
+<script>
+const ta = document.getElementById('ta')
+const counter = document.getElementById('counter')
+const reset = document.getElementById('reset')
+const MAX = 100
+
+function update(){
+  const left = MAX - ta.value.length
+  counter.textContent = `${left} characters left`
+  counter.className = 'counter'
+  if(left<=0){
+    counter.classList.add('red')
+  } else if(left<=20){
+    counter.classList.add('yellow')
+  }
+}
+
+// prevent typing when at 0 (some browsers still block because of maxlength but ensure)
+ta.addEventListener('keydown', (e)=>{
+  const left = MAX - ta.value.length
+  if(left<=0 && e.key.length===1){
+    e.preventDefault()
+  }
+})
+
+ta.addEventListener('input', update)
+reset.addEventListener('click', ()=>{ta.value=''; update(); ta.focus()})
+update()
+</script>
+</body>
+</html>

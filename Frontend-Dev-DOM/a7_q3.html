@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q3 - Multi-Step Form</title>
+<style>
+  body{font-family:Arial;margin:20px}
+  .step{display:none}
+  .step.active{display:block}
+  input{padding:6px;width:300px}
+  .buttons{margin-top:10px}
+</style>
+</head>
+<body>
+  <h2>3-Step Form</h2>
+  <div id="step1" class="step active">
+    <label>Name: <input id="name"></label>
+  </div>
+  <div id="step2" class="step">
+    <label>Email: <input id="email"></label>
+  </div>
+  <div id="step3" class="step">
+    <label>Password: <input id="password" type="password"></label>
+  </div>
+  <div class="buttons">
+    <button id="back" disabled>Back</button>
+    <button id="next">Next</button>
+  </div>
+  <div id="summary" style="margin-top:12px"></div>
+
+<script>
+const steps = ['step1','step2','step3']
+let current = 0
+const back = document.getElementById('back')
+const next = document.getElementById('next')
+const summary = document.getElementById('summary')
+
+function show(){
+  steps.forEach((id,i)=>{
+    document.getElementById(id).classList.toggle('active', i===current)
+  })
+  back.disabled = current===0
+  next.textContent = current===steps.length-1 ? 'Finish' : 'Next'
+}
+
+function validCurrent(){
+  if(current===0) return document.getElementById('name').value.trim().length>0
+  if(current===1) return /\S+@\S+\.\S+/.test(document.getElementById('email').value)
+  if(current===2) return document.getElementById('password').value.length>=6
+  return false
+}
+
+next.addEventListener('click', ()=>{
+  if(!validCurrent()) return alert('Please enter valid info for this step')
+  if(current<steps.length-1){ current++; show() }
+  else showSummary()
+})
+back.addEventListener('click', ()=>{ if(current>0){current--; show()} })
+
+function showSummary(){
+  const n=document.getElementById('name').value
+  const e=document.getElementById('email').value
+  summary.innerHTML = `<h3>Summary</h3><p>Name: ${n}</p><p>Email: ${e}</p>`
+}
+
+show()
+</script>
+</body>
+</html>

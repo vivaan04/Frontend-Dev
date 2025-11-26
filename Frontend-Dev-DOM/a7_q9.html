@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q9 - Form Submit Blocker</title>
+<style>
+  body{font-family:Arial;margin:20px}
+  label{display:block;margin:8px 0}
+  input{padding:6px;width:300px}
+  .error{color:#c0392b;font-size:0.9em}
+  .success{color:#1a8a1a}
+</style>
+</head>
+<body>
+  <h2>Form with live validation</h2>
+  <form id="f">
+    <label>Name: <input id="name" name="name"></label>
+    <div class="error" id="errName"></div>
+    <label>Email: <input id="email" name="email"></label>
+    <div class="error" id="errEmail"></div>
+    <label>Password: <input id="password" name="password" type="password"></label>
+    <div class="error" id="errPass"></div>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="msg"></div>
+<script>
+const form = document.getElementById('f')
+const nameI = document.getElementById('name')
+const emailI = document.getElementById('email')
+const passI = document.getElementById('password')
+const errName = document.getElementById('errName')
+const errEmail = document.getElementById('errEmail')
+const errPass = document.getElementById('errPass')
+const msg = document.getElementById('msg')
+
+function validate(){
+  let ok = true
+  errName.textContent = ''
+  errEmail.textContent = ''
+  errPass.textContent = ''
+
+  if(nameI.value.trim()===''){ errName.textContent='Name is required'; ok=false }
+  if(!emailI.value.includes('@')){ errEmail.textContent='Email must contain @'; ok=false }
+  if(passI.value.length < 6){ errPass.textContent='Password must be at least 6 chars'; ok=false }
+  return ok
+}
+
+form.addEventListener('submit', (e)=>{
+  e.preventDefault()
+  msg.textContent = ''
+  if(validate()){
+    msg.textContent = 'Form Submitted Successfully'
+    msg.className = 'success'
+  }
+})
+
+// live errors disappear on input
+[nameI,emailI,passI].forEach(inp=>{
+  inp.addEventListener('input', ()=>{
+    validate()
+    msg.textContent = ''
+  })
+})
+</script>
+</body>
+</html>

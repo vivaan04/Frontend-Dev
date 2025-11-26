@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q1 - Product List Manager</title>
+<style>
+  body{font-family:Arial;margin:20px}
+  input{padding:6px;width:300px}
+  button{padding:6px 8px;margin-left:6px}
+  ul{list-style:none;padding:0}
+  li{padding:8px;border:1px solid #ddd;margin:6px 0;display:flex;justify-content:space-between;align-items:center}
+  .actions button{margin-left:6px}
+  .editing{background:#fff8dc}
+</style>
+</head>
+<body>
+  <h2>Product List Manager</h2>
+  <input id="productInput" placeholder="Enter product name">
+  <button id="addBtn">Add</button>
+  <ul id="productList" tabindex="0"></ul>
+
+<script>
+const input = document.getElementById('productInput')
+const addBtn = document.getElementById('addBtn')
+const list = document.getElementById('productList')
+
+function createItem(name){
+  const li = document.createElement('li')
+  li.innerHTML = `<span class="name">${name}</span>
+    <span class="actions">
+      <button class="edit">Edit</button>
+      <button class="delete">Delete</button>
+    </span>`
+  return li
+}
+
+addBtn.addEventListener('click', ()=>{
+  const v = input.value.trim()
+  if(!v) return
+  list.appendChild(createItem(v))
+  input.value = ''
+})
+
+// Event delegation for edit/delete
+list.addEventListener('click', (e)=>{
+  const btn = e.target
+  const li = btn.closest('li')
+  if(!li) return
+  if(btn.classList.contains('delete')){
+    li.remove()
+  } else if(btn.classList.contains('edit')){
+    enterEdit(li)
+  }
+})
+
+let editingLi = null
+function enterEdit(li){
+  if(editingLi) saveEdit(editingLi)
+  editingLi = li
+  li.classList.add('editing')
+  const nameSpan = li.querySelector('.name')
+  const current = nameSpan.textContent
+  const inputEl = document.createElement('input')
+  inputEl.value = current
+  inputEl.style.width = '200px'
+  li.insertBefore(inputEl, nameSpan)
+  nameSpan.style.display='none'
+  inputEl.focus()
+  // save on blur (click outside)
+  inputEl.addEventListener('blur', ()=>{
+    saveEdit(li)
+  })
+  // save on Enter
+  inputEl.addEventListener('keydown', (ev)=>{
+    if(ev.key==='Enter') inputEl.blur()
+  })
+}
+
+function saveEdit(li){
+  if(!li) return
+  const inputEl = li.querySelector('input')
+  if(!inputEl) return
+  const newVal = inputEl.value.trim() || 'Untitled'
+  li.querySelector('.name').textContent = newVal
+  li.querySelector('.name').style.display = ''
+  inputEl.remove()
+  li.classList.remove('editing')
+  editingLi = null
+}
+
+// click outside editing saves via document listener
+document.addEventListener('click', (e)=>{
+  if(editingLi && !editingLi.contains(e.target) && e.target !== document.getElementById('addBtn')){
+    saveEdit(editingLi)
+  }
+})
+</script>
+</body>
+</html>
